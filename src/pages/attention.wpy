@@ -1,6 +1,7 @@
 <style lang="less">
     .attention{
         display: block;
+        
         .followList{
             display: block;
             .followLi{
