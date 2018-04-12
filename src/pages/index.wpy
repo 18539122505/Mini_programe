@@ -40,7 +40,7 @@
       background-color:#ffffff;
       font-size:26rpx;
       text-align:center;
-      line-height: 25rpx;
+      line-height: 28rpx;
       padding:22rpx 0;
       position:relative;
       .br{
@@ -56,6 +56,82 @@
         .aniSec{
           transform:rotate(-180deg) !important;
         }
+      }
+    }
+    .cityList{
+      width: 717rpx;
+      padding: 24rpx 0;
+      background-color: #ffffff;
+      border-bottom: 1rpx solid #eeeeee;
+      position: absolute;
+      top: 70rpx;
+      left: 16rpx;
+      border-top: 1rpx solid #EEEEEE;
+      dialog{
+        display: block;
+        height: 300rpx;
+        overflow-y: auto;
+        .city{
+          display:block;
+          float:left;
+          width: 216rpx;
+          color:#333333;
+          font-size: 26rpx;
+          border: 1rpx solid #EEEEEE;
+          border-radius: 3rpx;
+          line-height: 52rpx;
+          text-align: center;
+          margin-bottom: 20rpx;
+        }
+        .mr22{
+          margin-right:30rpx !important;
+        }
+        .selected{
+          border: 1rpx solid #02B6AD !important;
+          color: #02b6ad !important;
+          background-color: #E3FFFE !important;
+        }
+      }
+      buttongrounp{
+        float:left;
+        width: 702rpx;
+        display:block;
+        text-align:center;
+        cencel,sure{
+          display:inline-block;
+          width:330rpx;
+          text-align:center;
+          border:1rpx solid #CFCFCF;
+          line-height:68rpx;
+          font-size: 26rpx;
+          border-radius:5rpx
+        }
+        sure{
+          margin-left:34rpx;
+          border:1rpx solid #01B6AD !important;
+          background-color:#01B6AD;
+          color:#ffffff;
+        }
+      }
+    }
+    .filterSort{
+      width: 717rpx;
+      padding: 0 0;
+      background-color: #ffffff;
+      border-bottom: 1rpx solid #eeeeee;
+      position: absolute;
+      top: 70rpx;
+      left: 16rpx;
+      border-top: 1rpx solid #EEEEEE;
+      li{
+        display: block;
+        font-size: 26rpx;
+        color: #333333;
+        line-height: 88rpx;
+        padding: 0 24rpx;
+      }
+      .bb{
+        border-bottom: 1rpx solid #eeeeee;
       }
     }
   }
@@ -177,73 +253,6 @@
       }
     }
   }
-  .cityList{
-    width: 702rpx;
-    padding: 24rpx 24rpx;
-    background-color: #ffffff;
-    border-bottom: 1rpx solid #eeeeee;
-    dialog{
-      display: block;
-      height: 300rpx;
-      overflow-y: auto;
-      .city{
-        display:block;
-        float:left;
-        width: 216rpx;
-        color:#333333;
-        font-size: 26rpx;
-        border: 1rpx solid #EEEEEE;
-        border-radius: 3rpx;
-        line-height: 52rpx;
-        text-align: center;
-        margin-bottom: 20rpx;
-      }
-      .mr22{
-        margin-right:22rpx !important;
-      }
-      .selected{
-        border: 1rpx solid #02B6AD !important;
-        color: #02b6ad !important;
-        background-color: #E3FFFE !important;
-      }
-    }
-    buttongrounp{
-      float:left;
-      width: 702rpx;
-      display:block;
-      text-align:center;
-      cencel,sure{
-        display:inline-block;
-        width:330rpx;
-        text-align:center;
-        border:1rpx solid #CFCFCF;
-        line-height:68rpx;
-        font-size: 26rpx;
-        border-radius:5rpx
-      }
-      sure{
-        margin-left:34rpx;
-        border:1rpx solid #01B6AD !important;
-        background-color:#01B6AD;
-        color:#ffffff;
-      }
-    }
-  }
-  .filterSort{
-    width: 702rpx;
-    padding: 0 24rpx;
-    background-color: #ffffff;
-    border-bottom: 1rpx solid #eeeeee;
-    li{
-      display: block;
-      font-size: 26rpx;
-      color: #333333;
-      line-height: 88rpx;
-    }
-    .bb{
-      border-bottom: 1rpx solid #eeeeee;
-    }
-  }
   .selLi{
     transform:translate('0');
   }
@@ -314,11 +323,10 @@
           排序<i class="{{isShow == 5?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
         </a>
       </li>
-    </ul>
-    <!--城市选择列表-->
-      <ul class="cityList clearfix" wx:if="{{isShow == 1?true:false}}">
+
+       <!--城市选择列表-->
+      <ul class="cityList clearfix" wx:if="{{isShow == 1 && isShowDialog?true:false}}">
         <dialog>
-          <!--  -->
           <repeat for="{{cityArr}}" key="index" index="index" item="item">
             <li class="{{(index+1)%3 != 0? (childCity==item?'city mr22 selected':'city mr22'):(childCity==item?'city selected':'city')}}" bindtap="childSelCity({{item}})">{{item}}</li>
           </repeat>
@@ -328,7 +336,7 @@
         </buttongrounp>
       </ul>
       <!--分类选择列表-->
-      <ul class="cityList clearfix" wx:elif="{{isShow == 2?true:false}}">
+      <ul class="cityList clearfix" wx:elif="{{isShow == 2 && isShowTypeDialog?true:false}}">
         <dialog>
           <repeat for="{{typeArr}}" key="index" index="index" item="item">
             <li class="{{(index+1)%3 != 0? (childType==item?'city mr22 selected':'city mr22'):(childType==item?'city selected':'city')}}" bindtap="childSelCity({{item}})" bindtap="childSelType({{item}})">{{item}}</li>
@@ -339,7 +347,7 @@
         </buttongrounp>
       </ul>  
       <!--品牌-->
-      <ul class="cityList clearfix" wx:elif="{{isShow == 3?true:false}}">
+      <ul class="cityList clearfix" wx:elif="{{isShow == 3 && isShowBrandDialog?true:false}}">
         <dialog>
           <repeat for="{{brandArr}}" key="index" index="index" item="item">
             <li class="{{(index+1)%3 != 0? (childBrand==item?'city mr22 selected':'city mr22'):(childBrand==item?'city selected':'city')}}" bindtap="childSelBrand({{item}})">{{item}}</li>
@@ -349,6 +357,20 @@
           <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
         </buttongrounp>
       </ul>
+      <!--排序-->
+      <ul class="filterSort" wx:elif="{{isShow == 5 && isShowSortDialog?true:false}}">
+        <li bindtap="selSort(1)" class="{{selSort == 1?'bb clearfix selStyle':'bb clearfix'}}">
+          时间最新发布<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 1}}"></i>  
+        </li>
+        <li bindtap="selSort(2)" class="{{selSort == 2?'bb clearfix selStyle':'bb clearfix'}}">
+          价格由高到低<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 2}}"></i>  
+        </li>
+        <li bindtap="selSort(3)" class="{{selSort == 3?'selStyle clearfix':'clearfix'}}">
+          价格由低到高<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 3}}"></i>  
+        </li>
+      </ul>
+    </ul>
+   
       <!--年限
       <ul class="cityList clearfix" wx:elif="{{isShow == 4?true:false}}">
         <dialog>
@@ -360,18 +382,7 @@
           <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
         </buttongrounp>
       </ul>-->
-      <!--排序-->
-      <ul class="filterSort" wx:elif="{{isShow == 5?true:false}}">
-        <li bindtap="selSort(1)" class="{{selSort == 1?'bb clearfix selStyle':'bb clearfix'}}">
-          时间最新发布<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 1}}"></i>  
-        </li>
-        <li bindtap="selSort(2)" class="{{selSort == 2?'bb clearfix selStyle':'bb clearfix'}}">
-          价格由高到低<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 2}}"></i>  
-        </li>
-        <li bindtap="selSort(3)" class="{{selSort == 3?'selStyle clearfix':'clearfix'}}">
-          价格由低到高<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 3}}"></i>  
-        </li>
-      </ul>
+      
     <!--列表-->
     <ul class="msgList">
       <li class="msgBox">
@@ -456,6 +467,10 @@
       interval: 5000,
       duration: 1000,
       isShow:-1,
+      isShowDialog:false,
+      isShowTypeDialog:false,
+      isShowBrandDialog:false,
+      isShowSortDialog:false,
       selSort:1,
       childCity:'全国',
       childType:'全部',
@@ -485,6 +500,10 @@
       /*选择城市*/
       selCity:function(index){
         this.isShow = index;
+        this.isShowDialog = !this.isShowDialog;
+        if(!this.isShowDialog){
+          this.isShow = -1;
+        }
       },
       /*城市子分类选择*/
       childSelCity:function(index){
@@ -493,6 +512,10 @@
       /*展示分类*/
       showType:function(index){
         this.isShow = index;
+        this.isShowTypeDialog = !this.isShowTypeDialog
+        if(!this.isShowTypeDialog){
+          this.isShow = -1;
+        }
       },
       /*分类子分类选择*/
       childSelType:function(item){
@@ -501,24 +524,34 @@
       /*展示品牌*/
       showbrand:function(index){
         this.isShow = index;
+        this.isShowBrandDialog = !this.isShowBrandDialog;
+        if(!this.isShowBrandDialog){
+          this.isShow = -1;
+        }
       },
       childSelBrand:function(item){
         this.childBrand = item;
       },
-      /*展示年份*/
+      /*展示年份
       showYear:function(index){
         this.isShow = index;
+        this.isShowDialog = !this.isShowDialog;
       },
       childSelYear:function(item){
         this.childYear = item;
-      },
+      },*/
       /*展示排序*/
       showSort:function(index){
         this.isShow = index;
+        this.isShowSortDialog = !this.isShowSortDialog;
+        if(!this.isShowSortDialog){
+          this.isShow = -1;
+        }
       },
       /*选择排序*/
       selSort:function(index){
         this.selSort = index;
+        this.isShowSortDialog = false;
         this.isShow = -1;
       },
       /*取消按钮*/
