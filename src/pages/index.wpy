@@ -36,8 +36,8 @@
     .parent{
       display:block;
       float:left;
-      width:20%;
-      font-size:22rpx;
+      width:25%;
+      font-size:26rpx;
       text-align:center;
       line-height: 25rpx;
       padding:22rpx 0;
@@ -300,11 +300,11 @@
           品牌<i class="{{isShow == 3?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
         </a>
       </li>
-      <li bindtap="showYear(4)" class="{{isShow == 4?'parent sec':'parent'}}">
+      <!-- <li bindtap="showYear(4)" class="{{isShow == 4?'parent sec':'parent'}}">
         <a class="br">
           年限<i class="{{isShow == 4?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
         </a>
-      </li>
+      </li> -->
       <li bindtap="showSort(5)" class="{{isShow == 5?'parent sec':'parent'}}">
         <a>
           排序<i class="{{isShow == 5?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
@@ -312,7 +312,7 @@
       </li>
     </ul>
     <!--城市选择列表-->
-      <ul class="cityList clearfix}" wx:if="{{isShow == 1?true:false}}">
+      <ul class="cityList clearfix" wx:if="{{isShow == 1?true:false}}">
         <dialog>
           <!--  -->
           <repeat for="{{cityArr}}" key="index" index="index" item="item">
@@ -345,7 +345,7 @@
           <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
         </buttongrounp>
       </ul>
-      <!--年限-->
+      <!--年限
       <ul class="cityList clearfix" wx:elif="{{isShow == 4?true:false}}">
         <dialog>
           <repeat for="{{yearArr}}" key="index" index="index" item="item">
@@ -355,7 +355,7 @@
         <buttongrounp>
           <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
         </buttongrounp>
-      </ul>
+      </ul>-->
       <!--排序-->
       <ul class="filterSort" wx:elif="{{isShow == 5?true:false}}">
         <li bindtap="selSort(1)" class="{{selSort == 1?'bb clearfix selStyle':'bb clearfix'}}">
