@@ -30,6 +30,7 @@
                         color: #333333;
                         line-height: 45rpx;
                     }
+                    
                     .msg{
                         font-size: 26rpx;
                         color: #666666;
