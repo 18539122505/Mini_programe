@@ -28,7 +28,7 @@
     padding: 0 16rpx;
     border-bottom: 1rpx solid #EEEEEE;
     margin-top: 20rpx;
-    background-color:#ffffff;
+    box-shadow: 0 0 5rpx #EEEEEE;
     position:relative;
     .sec{
       color:#16bcb3 !important;
@@ -37,6 +37,7 @@
       display:block;
       float:left;
       width:25%;
+      background-color:#ffffff;
       font-size:26rpx;
       text-align:center;
       line-height: 25rpx;
@@ -62,19 +63,21 @@
     display: block;
     .msgBox{
       display: block;
-      background-color: #ffffff;
+      width: 717rpx;
       margin-bottom: 20rpx;
+      padding: 0 16rpx;
       .msg{
         display: block;
-        width: 717rpx;
         padding: 14rpx 16rpx 0 16rpx;
         border-bottom: 1rpx solid #EEEEEE;
+        background-color: #ffffff;
+        box-shadow: 0 0 10rpx #EEEEEE;
         .userIcon{
           display: block;
           width: 75rpx;
         }
         .userMsg{
-          width: 628rpx;
+          width: 598rpx;
           padding-left: 15rpx;
           .userName{
             display: block;
@@ -121,9 +124,8 @@
             padding: 16rpx 0;
             image{
               display: inline-block;
-              width: 206rpx;
+              width: 198rpx;
               height: 174rpx;
-              border-radius: 10rpx;
             }
             .mr4{
               margin-right: 4rpx;
@@ -134,7 +136,9 @@
       .operation{
         display: block;
         width: 717rpx;
-        padding: 20rpx 16rpx;
+        padding: 20rpx 0;
+        box-shadow: 0 0 10rpx #EEEEEE;
+        background-color: #ffffff;
         .content{
           display: block;
           padding-left: 88rpx;
