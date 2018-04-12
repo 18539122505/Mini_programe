@@ -1,0 +1,184 @@
+<style lang="less">
+.user_details{
+    display: block;
+    background-color: #F7F4F8;
+    padding-bottom: 90rpx;
+    /*用户头像*/
+    .user_msg{
+      display: block;
+      padding: 56rpx 20rpx 46rpx;
+      background-color: #ffffff;
+      .user_icon{
+        display: block;
+        width: 140rpx;
+        height: 140rpx;
+        border-radius: 50%;
+        margin: 0 auto 20rpx;
+      }
+      .user_name{
+        display: block;
+        font-size: 30rpx;
+        color: #333333;
+        text-align: center;
+        line-height: 50rpx;
+      }
+    }
+    /*产品列表*/
+    .proList{
+        margin-top: 20rpx;
+        .proLi{
+            display: block;
+            padding: 15rpx 20rpx;
+            background-color: #ffffff;
+            margin-bottom: 20rpx;
+            .image_icon{
+                display: block;
+                width: 206rpx;
+                height: 174rpx;
+                image{
+                    display: block;
+                    width: 206rpx !important;
+                    height: 174rpx !important;
+                    border-radius: 8rpx !important;
+                }
+            }
+            .pro_text{
+                width: 484rpx;
+                padding-left: 16rpx;
+                p{
+                    display: block;
+                }
+                .tit{
+                    font-size: 30rpx;
+                    color: #333333;
+                    line-height: 40rpx;
+                    i{
+                        font-size: 24rpx;
+                        color: #999999;
+                    }
+                }
+                .intro{
+                    font-size: 26rpx;
+                    color: #666666;
+                    line-height: 40rpx;
+                }
+                .price{
+                    font-size: 30rpx;
+                    color: #ff0000;
+                    line-height: 54rpx;
+                }
+                .state{
+                    font-size: 22rpx;
+                    color: #999999;
+                    span{
+                        display: inline-block;
+                        padding-left: 16rpx;
+                        padding-right: 28rpx;
+                    }
+                }
+            }
+        }
+    }
+    .operation{
+        position: fixed;
+        bottom: 0;
+        width: 750rpx;
+        .li{
+            display: inline-block;
+            width: 250rpx;
+            text-align: center;
+            line-height: 90rpx;
+            font-size: 30rpx;
+            color:#ffffff;
+        }
+        .follow{
+            background-color: #CCCCCC;
+        }
+        .more{
+            background-color: #FFB400;
+        }
+        .phone{
+            background-color: #02B6AD;
+        }
+    }
+}
+</style>
+<template>
+  <view class="user_details">
+    <!--用户信息-->
+    <view class="user_msg">
+        <image src="../assets/images/my.png" class="user_icon"/>
+        <view class="user_name">苏格拉没有底</view>
+    </view>
+    <!--产品列表-->
+    <view class="proList">
+        <repeat for="{{product}}" key="index" index="index" item="item">
+            <view class="proLi clearfix">
+                <view class="image_icon fl">
+                    <image src="{{item.img}}"/>
+                </view>
+                <view class="pro_text fr">
+                    <p class="tit">{{item.tit}}<i class="iconfont icon-fenxiang fr">分享</i></p>
+                    <p class="intro">{{item.intro}}</p>
+                    <p class="price"><b>{{item.price}}</b>万</p>
+                    <p class="state">{{item.time}}分钟前<span>|</span>浏览{{item.count}}次</p>
+                </view>
+            </view>    
+        </repeat>
+    </view>
+    <!--操作栏-->
+    <view class="operation">
+        <view class="li follow">关注</view>
+        <view class="li more">更多设备</view>
+        <view class="li phone">电话联系</view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class userDetails extends wepy.page {
+    config={
+        navigationBarTitleText: '用户详情',
+        backgroundColor:'#F7F4F8'
+    }
+    data={
+        product:[
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'14.5',
+                time:'8',
+                count:225
+            },
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'17.5',
+                time:'8',
+                count:225
+            },
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'20.5',
+                time:'8',
+                count:225
+            },
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'40.5',
+                time:'8',
+                count:225
+            }
+        ]
+    }
+    onLoad(options){
+        console.log(options.userid);
+    }
+}
+</script>

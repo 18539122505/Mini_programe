@@ -1,0 +1,176 @@
+<style lang="less">
+  .personal{
+    height: 100%;
+    display: block;
+    background-color: #F7F4F8;
+    .user_msg{
+      display: block;
+      padding: 56rpx 20rpx 46rpx;
+      
+      background-color: #ffffff;
+      .user_icon{
+        display: block;
+        width: 140rpx;
+        height: 140rpx;
+        border-radius: 50%;
+        margin: 0 auto 20rpx;
+      }
+      .user_name{
+        display: block;
+        font-size: 30rpx;
+        color: #333333;
+        text-align: center;
+        line-height: 50rpx;
+      }
+    }
+    .ul{
+      display: block;
+      margin-top: 20rpx;
+      padding: 0 20rpx;
+      background-color: #ffffff;
+      .li{
+        display: block;
+        line-height: 88rpx;
+        border-bottom: 1rpx solid #EEEEEE;
+        i{
+          font-size: 30rpx;
+          color: #999999;
+          vertical-align: middle;
+        }
+        cont{
+          display: inline-block;
+          padding-left: 20rpx;
+          font-size: 28rpx;
+          color: #333333;
+          vertical-align: middle;
+          position: relative;
+          button{
+            display: block;
+            width: 700rpx;
+            font-size: 28rpx;
+            background: rgba(0,0,0,0);
+            line-height: 88rpx;
+            padding-left: 20rpx;
+            text-align: left;
+            &::after{
+              border: 0 !important;
+            }
+            position: absolute;
+            left: 0
+          }
+        }
+        intro{
+          display: inline-block;
+          color: #999999;
+          font-size: 28rpx;
+          padding-right: 20rpx;
+        }
+      }
+    }
+  }
+</style>
+<template>
+  <view class="personal">
+    <!--用户头像-->
+    <view class="user_msg">
+      <image src="../assets/images/my.png" class="user_icon">
+      <view class="user_name">苏格拉没有底</view>
+    </view>
+    <!--我得信息列表-->
+    <view class="ul">
+      <view class="li clearfix" bindtap="jumpRelease">
+        <i class="iconfont icon-wofabude fl"></i><cont class="fl">我发布的</cont><i class="iconfont icon-xiangyou fr"></i>
+      </view>
+      <view class="li clearfix" bindtap="jumpCollection">
+        <i class="iconfont icon-shoucang1 fl"></i><cont class="fl">我的收藏</cont> <i class="iconfont icon-xiangyou fr"></i><intro class="fr">0</intro>
+      </view>
+      <view class="li clearfix" bindtap="jumpFollow">
+        <i class="iconfont icon-wodeguanzhu fl"></i><cont class="fl">我的关注</cont><i class="iconfont icon-xiangyou fr"></i><intro class="fr">0</intro>
+      </view>
+      <view class="li clearfix" bindtap="jumpAttention">
+        <i class="iconfont icon-yanjing-zheng fl"></i><cont class="fl">关注我的</cont><i class="iconfont icon-xiangyou fr"></i><intro class="fr">0</intro>
+      </view>
+    </view>
+    <!--我得信息列表-->
+    <view class="ul">
+      <view class="li clearfix">
+        <i class="iconfont icon-yijianfankui fl"></i>
+        <cont class="fl">
+          <button 
+          type="default-light" 
+          session-from="weapp"
+          open-type="contact"
+        >资讯反馈
+        </button>
+        </cont>
+        <i class="iconfont icon-xiangyou fr"></i><intro class="fr">实时动态</intro>
+      </view>
+      <view class="li clearfix" bindtap="getCode">
+        <i class="iconfont icon-erweima fl"></i><cont class="fl">分享码</cont> <i class="iconfont icon-xiangyou fr"></i><intro class="fr">个人专属小程序码</intro>
+      </view>
+      <view class="li clearfix" bindtap="jumpSeting">
+        <i class="iconfont icon-shezhi fl"></i><cont class="fl">授权设置</cont><i class="iconfont icon-xiangyou fr"></i><intro class="fr">0</intro>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Personal extends wepy.page {
+  config={
+    navigationBarTitleText: '我的账户',
+    backgroundColor:'#F7F4F8'
+  }
+  methods={
+    /*跳我的发布*/
+    jumpRelease:function(){
+      wx.navigateTo({
+        url:'release?userid=333'
+      })
+    },
+    /*跳收藏页*/
+    jumpCollection:function(){
+      wx.navigateTo({
+        url:'collection?userid=444'
+      })
+    },
+    /*跳我的关注页*/
+    jumpFollow:function(){
+      wx.navigateTo({
+        url:'follow?userid=555'
+      })
+    },
+    /*跳关注我的页面*/
+    jumpAttention:function(){
+      wx.navigateTo({
+        url:'attention?userid=666'
+      })
+    },
+    /*获取二维码*/
+    getCode:function(){
+      // wx.request({
+      //   url:'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential',
+      //   method:'GET',
+      //   data:{
+      //     'appid':'wx1fbe56618b7eba1f',
+      //     'secret':'cf3d0379888f5dc336d84edc5b739fdc'
+      //   },
+      //   success:function(res){
+      //     console.log(res)
+      //   }
+      // })
+    },
+    /*授权设置页*/
+    jumpSeting:function(){
+      wx.openSetting({
+        success:(res)=>{
+          res.authSetting = {
+            "scope.userInfo": true,
+            "scope.userLocation": true
+          }
+        }
+      })
+    }
+  }
+}
+</script>

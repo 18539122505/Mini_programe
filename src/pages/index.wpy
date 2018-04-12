@@ -1,0 +1,579 @@
+<style lang="less">
+/*searchBar*/
+@import '../assets/weui/style/widget/weui-searchbar/weui-searchbar.wxss';
+/*Gride*/
+@import '../assets/weui/style/widget/weui-grid/weui-grid.wxss';
+.container{
+  background-color:#F7F4F8;
+  .carousel{
+    width: 100%;
+    height: auto;
+    swiper{
+      height: 375rpx;
+      .slide-image{
+        display: block ;
+        width: 100% !important;
+        height: 375rpx;
+      }
+    }
+  }
+  .page__bd{
+    .weui-search-bar{
+      width:750rpx;
+      background-color: #ffffff;
+    }
+  }
+  .navbar{
+    width:717rpx;
+    padding: 0 16rpx;
+    border-bottom: 1rpx solid #EEEEEE;
+    margin-top: 20rpx;
+    background-color:#ffffff;
+    position:relative;
+    .sec{
+      color:#16bcb3 !important;
+    }
+    .parent{
+      display:block;
+      float:left;
+      width:20%;
+      font-size:22rpx;
+      text-align:center;
+      line-height: 25rpx;
+      padding:22rpx 0;
+      position:relative;
+      .br{
+        border-right:1rpx solid #EEEEEE;
+      }
+      a{
+        display:block;
+        i{
+          display:inline-block;
+          font-size:22rpx;
+          transition:transform 0.5s;
+        }
+        .aniSec{
+          transform:rotate(-180deg) !important;
+        }
+      }
+    }
+  }
+  .msgList{
+    display: block;
+    .msgBox{
+      display: block;
+      background-color: #ffffff;
+      margin-bottom: 20rpx;
+      .msg{
+        display: block;
+        width: 717rpx;
+        padding: 14rpx 16rpx 0 16rpx;
+        border-bottom: 1rpx solid #EEEEEE;
+        .userIcon{
+          display: block;
+          width: 75rpx;
+        }
+        .userMsg{
+          width: 628rpx;
+          padding-left: 15rpx;
+          .userName{
+            display: block;
+            line-height: 46rpx;
+            .name{
+              font-size: 26rpx;
+              color: #333333;
+            }
+            .number{
+              font-size: 22rpx;
+              color: #999999;
+            }
+          }
+          .userAddress{
+            display: block;
+            font-size: 22rpx;
+            line-height: 36rpx;
+            color: #999999;
+            span{
+              display: inline-block;
+              padding: 0 50rpx;
+            }
+          }
+          .product{
+            display: block;
+            font-size: 30rpx;
+            color: #333333;
+            line-height: 46rpx;
+            .price{
+              display: inline-block;
+              color: #ff0000;
+              padding-left: 32rpx;
+            }
+          }
+          .intro{
+            display: block;
+            font-size: 28rpx;
+            color: #999999;
+            line-height: 46rpx;
+          }
+          .prevImg{
+            display: block;
+            width: 100%;
+            padding: 16rpx 0;
+            image{
+              display: inline-block;
+              width: 206rpx;
+              height: 174rpx;
+              border-radius: 10rpx;
+            }
+            .mr4{
+              margin-right: 4rpx;
+            }
+          }
+        }
+      }
+      .operation{
+        display: block;
+        width: 717rpx;
+        padding: 20rpx 16rpx;
+        .content{
+          display: block;
+          padding-left: 88rpx;
+          line-height: 58rpx;
+          .share, .colle,.comment{
+            display: inline-block;
+            font-size: 22rpx;
+            color: #999999;
+            margin-right: 46rpx;
+            i{
+              display: inline-block;
+              font-size: 28rpx;
+              margin-right: 14rpx;
+            }
+          }
+          .share{
+            i{
+              font-size: 34rpx !important;
+            }
+          }
+          .phone{
+            display: inline-block;
+            width: 194rpx;
+            font-size: 24rpx;
+            color: #ffffff;
+            background-color: #16BCB3;
+            text-align: center;
+            border-radius: 30rpx;
+            i{
+              display: inline-block;
+              font-size: 28rpx;
+              margin-right: 5rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cityList{
+    width: 702rpx;
+    padding: 24rpx 24rpx;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #eeeeee;
+    dialog{
+      display: block;
+      height: 300rpx;
+      overflow-y: auto;
+      .city{
+        display:block;
+        float:left;
+        width: 216rpx;
+        color:#333333;
+        font-size: 26rpx;
+        border: 1rpx solid #EEEEEE;
+        border-radius: 3rpx;
+        line-height: 52rpx;
+        text-align: center;
+        margin-bottom: 20rpx;
+      }
+      .mr22{
+        margin-right:22rpx !important;
+      }
+      .selected{
+        border: 1rpx solid #02B6AD !important;
+        color: #02b6ad !important;
+        background-color: #E3FFFE !important;
+      }
+    }
+    buttongrounp{
+      float:left;
+      width: 702rpx;
+      display:block;
+      text-align:center;
+      cencel,sure{
+        display:inline-block;
+        width:330rpx;
+        text-align:center;
+        border:1rpx solid #CFCFCF;
+        line-height:68rpx;
+        font-size: 26rpx;
+        border-radius:5rpx
+      }
+      sure{
+        margin-left:34rpx;
+        border:1rpx solid #01B6AD !important;
+        background-color:#01B6AD;
+        color:#ffffff;
+      }
+    }
+  }
+  .filterSort{
+    width: 702rpx;
+    padding: 0 24rpx;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #eeeeee;
+    li{
+      display: block;
+      font-size: 26rpx;
+      color: #333333;
+      line-height: 88rpx;
+    }
+    .bb{
+      border-bottom: 1rpx solid #eeeeee;
+    }
+  }
+  .selLi{
+    transform:translate('0');
+  }
+  .selStyle{
+    color: #02b6ad !important;
+  }
+}
+</style>
+<template>
+  <view class="container">
+    <!--轮播-->
+    <view class="carousel">
+      <swiper indicator-dots="{{indicatorDots}}"
+        indicator-color="#61C2EB"
+        indicator-active-color="#FFFFFF"
+        circular="{{true}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--搜索框-->
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+    <!--条件搜索-->
+    <ul class="navbar clearfix">
+      <li bindtap="selCity(1)" class="{{isShow == 1?'parent sec':'parent'}}">
+        <a class="br">
+          全国<i class="{{isShow == 1?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
+        </a>
+      </li>
+      <li bindtap="showType(2)" class="{{isShow == 2?'parent sec':'parent'}}">
+        <a class="br">
+          分类<i class="{{isShow == 2?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
+        </a>
+      </li>
+      <li bindtap="showbrand(3)" class="{{isShow == 3?'parent sec':'parent'}}">
+        <a class="br">
+          品牌<i class="{{isShow == 3?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
+        </a>
+      </li>
+      <li bindtap="showYear(4)" class="{{isShow == 4?'parent sec':'parent'}}">
+        <a class="br">
+          年限<i class="{{isShow == 4?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
+        </a>
+      </li>
+      <li bindtap="showSort(5)" class="{{isShow == 5?'parent sec':'parent'}}">
+        <a>
+          排序<i class="{{isShow == 5?'iconfont icon-xiala aniSec':'iconfont icon-xiala'}}"></i>
+        </a>
+      </li>
+    </ul>
+    <!--城市选择列表-->
+      <ul class="cityList clearfix}" wx:if="{{isShow == 1?true:false}}">
+        <dialog>
+          <!--  -->
+          <repeat for="{{cityArr}}" key="index" index="index" item="item">
+            <li class="{{(index+1)%3 != 0? (childCity==item?'city mr22 selected':'city mr22'):(childCity==item?'city selected':'city')}}" bindtap="childSelCity({{item}})">{{item}}</li>
+          </repeat>
+        </dialog>
+        <buttongrounp>
+          <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
+        </buttongrounp>
+      </ul>
+      <!--分类选择列表-->
+      <ul class="cityList clearfix" wx:elif="{{isShow == 2?true:false}}">
+        <dialog>
+          <repeat for="{{typeArr}}" key="index" index="index" item="item">
+            <li class="{{(index+1)%3 != 0? (childType==item?'city mr22 selected':'city mr22'):(childType==item?'city selected':'city')}}" bindtap="childSelCity({{item}})" bindtap="childSelType({{item}})">{{item}}</li>
+          </repeat>
+        </dialog>
+        <buttongrounp>
+          <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
+        </buttongrounp>
+      </ul>  
+      <!--品牌-->
+      <ul class="cityList clearfix" wx:elif="{{isShow == 3?true:false}}">
+        <dialog>
+          <repeat for="{{brandArr}}" key="index" index="index" item="item">
+            <li class="{{(index+1)%3 != 0? (childBrand==item?'city mr22 selected':'city mr22'):(childBrand==item?'city selected':'city')}}" bindtap="childSelBrand({{item}})">{{item}}</li>
+          </repeat>
+        </dialog>
+        <buttongrounp>
+          <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
+        </buttongrounp>
+      </ul>
+      <!--年限-->
+      <ul class="cityList clearfix" wx:elif="{{isShow == 4?true:false}}">
+        <dialog>
+          <repeat for="{{yearArr}}" key="index" index="index" item="item">
+            <li class="{{(index+1)%3 != 0? (childYear==item?'city mr22 selected':'city mr22'):(childYear==item?'city selected':'city')}}" bindtap="childSelYear({{item}})">{{item}}</li>
+          </repeat>
+        </dialog>
+        <buttongrounp>
+          <cencel bindtap="cencel">取消</cencel><sure bindtap="sure">确定</sure>
+        </buttongrounp>
+      </ul>
+      <!--排序-->
+      <ul class="filterSort" wx:elif="{{isShow == 5?true:false}}">
+        <li bindtap="selSort(1)" class="{{selSort == 1?'bb clearfix selStyle':'bb clearfix'}}">
+          时间最新发布<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 1}}"></i>  
+        </li>
+        <li bindtap="selSort(2)" class="{{selSort == 2?'bb clearfix selStyle':'bb clearfix'}}">
+          价格由高到低<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 2}}"></i>  
+        </li>
+        <li bindtap="selSort(3)" class="{{selSort == 3?'selStyle clearfix':'clearfix'}}">
+          价格由低到高<i class="fr iconfont icon-guifanjieguoyeduigou" wx:if="{{selSort == 3}}"></i>  
+        </li>
+      </ul>
+    <!--列表-->
+    <ul class="msgList">
+      <li class="msgBox">
+        <div class="msg clearfix">
+          <div class="fl userIcon">
+            <image src="../assets/images/my.png" style="display:block;width:75rpx;height:75rpx;border-radius:50%;"> 
+          </div>
+          <div class="fr userMsg">
+            <!-- 用户信息 -->
+            <div class="userName clearfix">
+              <name class="fl name">苏格拉没有底</name>
+              <number class="fr number">编号：117542</number> 
+            </div>
+            <!-- 用户地址 及时间 -->
+            <div class="userAddress">
+              <i class="iconfont icon-weizhi" style="display:inline-block;margin-right:10rpx;font-size:22rpx;"></i>河南省南阳市卧龙区<span>|</span>1小时前
+            </div>
+            <!-- 产品及报价 -->
+            <div class="product" bindtap="jumpDetails">
+              长江2018年全新20吨吊车<span class="price">14.5万</span>  
+            </div> 
+            <!-- 产品介绍 -->
+            <div class="intro">
+              车况良好，手续齐全，砍价勿扰
+            </div>
+            <!--图片预览-->
+            <div class="prevImg">
+              <repeat for="{{imageArr}}" item="item" index="index" key="index">
+                <image class="{{(index+1)%3 != 0?'mr4':''}}" src="{{item}}" bindtap="seeImg({{item}})"/>
+              </repeat>
+            </div>
+          </div>
+        </div>
+        <div class="operation">
+          <div class="content clearfix">
+            <share class="share" bindtap="shareMsg"><i class="iconfont icon-fenxiang"></i>分享</share>
+            <colle class="colle"><i class="iconfont icon-shoucang"></i>收藏</colle>
+            <comment class="comment" bindtap="comment"><i class="iconfont icon-pinglun"></i>评论</comment>
+            <phone class="phone fr"><i class="iconfont icon-fuhao-dianhua"></i>联系电话</phone>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  /*导航*/
+  import qizh_Nav from '../components/nav';
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '起重圈',
+      backgroundColor:'#F7F4F8'
+    }
+    data = {
+      grids: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      imageArr:[
+        'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=845224913,672761462&fm=27&gp=0.jpg',
+        'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3878847766,3988120331&fm=200&gp=0.jpg',
+        'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3448661152,313512508&fm=111&gp=0.jpg'
+      ],
+      imgUrls: [
+        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      ],
+      cityArr:[
+        '全国','北京','天津','上海','重庆','河北','河南','湖南','湖北','广东','广西'
+      ],
+      typeArr:[
+        "全部","吊车","越野吊车","履带吊","高空作业平台","随车吊","吊塔","高空作业","施工升降机","其他"
+      ],
+      brandArr:[
+        "不限","中联重科","三一重工","徐工","柳工","东岳","抚挖锦重","京城重工","北方交通","利勃海尔","北起多田野","雷萨重机","泰安五岳"
+      ],
+      yearArr:[
+        "不限","3年以内","3-5年","5-8年","8-10年","10年以上"
+      ],
+      indicatorDots: true,
+      autoplay: true,
+      interval: 5000,
+      duration: 1000,
+      isShow:-1,
+      selSort:1,
+      childCity:'全国',
+      childType:'全部',
+      childBrand:'不限',
+      childYear:'不限',
+      /*搜索框*/
+      inputShowed: false,
+      inputVal: ""
+    }
+    components={
+
+    }
+    computed = {
+       
+    }
+    onShow(){
+      console.log(111)
+      let self = this;
+      this.$parent.getUserInfo(function (userInfo) {
+        if (userInfo) {
+          self.userInfo = userInfo
+          console.log(self.userInfo);
+        }
+      })
+    }
+    methods = {
+      /*选择城市*/
+      selCity:function(index){
+        this.isShow = index;
+      },
+      /*城市子分类选择*/
+      childSelCity:function(index){
+        this.childCity = index;
+      },
+      /*展示分类*/
+      showType:function(index){
+        this.isShow = index;
+      },
+      /*分类子分类选择*/
+      childSelType:function(item){
+        this.childType = item;
+      },
+      /*展示品牌*/
+      showbrand:function(index){
+        this.isShow = index;
+      },
+      childSelBrand:function(item){
+        this.childBrand = item;
+      },
+      /*展示年份*/
+      showYear:function(index){
+        this.isShow = index;
+      },
+      childSelYear:function(item){
+        this.childYear = item;
+      },
+      /*展示排序*/
+      showSort:function(index){
+        this.isShow = index;
+      },
+      /*选择排序*/
+      selSort:function(index){
+        this.selSort = index;
+        this.isShow = -1;
+      },
+      /*取消按钮*/
+      cencel:function(){
+        this.isShow = -1
+      },
+      /*确认*/
+      sure:function(){
+        this.isShow = -1
+      },
+      /*搜索框事件*/
+      showInput: function () {
+        this.inputShowed= true;
+      },
+      hideInput: function () {
+        this.inputVal= "";
+        this.inputShowed= false
+      },
+      clearInput: function () {
+        this.inputVal= "";
+      },
+      inputTyping: function (e) {
+        this.inputVal= e.detail.value;
+      },
+      /*查看图片*/
+      seeImg:function(imgUrl){
+        let _that = this;
+        wx.previewImage({
+          current: imgUrl, // 当前显示图片的http链接
+          urls: _that.imageArr // 需要预览的图片http链接列表
+        })
+      },
+      /*分享*/
+      shareMsg:function(){
+        wx.showShareMenu({
+          withShareTicket:false,
+          success:function(e){
+            console.log(e);
+          },
+          fail:function(e){
+            console.log(e);
+          }
+        })
+      },
+      /*跳转详情页*/
+      jumpDetails:function(){
+        wx.navigateTo({
+          url:'detail?id=111'
+        })
+      },
+      /*评论*/
+      comment:function(){
+        wx.navigateTo({
+          url:'bindphone'
+        })
+      }
+    }
+    events = {}
+
+    onLoad() {}
+  }
+</script>

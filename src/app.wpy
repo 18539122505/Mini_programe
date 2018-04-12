@@ -1,0 +1,168 @@
+<style lang="less">
+@import './assets/style/icon/iconfont.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+a,button,span,div,p,h1,h2,h3,h4,i,img{
+	-webkit-tap-highlight-color: transparent !important;
+}
+fieldset,img { 
+  border:none; 
+} 
+a:link{
+text-decoration:none !important;
+}
+a:visited{
+text-decoration:none !important;
+}
+a:hover{
+text-decoration:none !important;
+}
+a:active{
+text-decoration:none !important;
+}
+ins,a { 
+text-decoration:none; 
+} 
+/* 清除浮动 */
+.clear:after{content:'';display:block;clear:both ;height:0;font-size:0;line-height:0;width:100%;}
+.clearfix:before,.clearfix:after { 
+content:" "; 
+display:table; 
+} 
+.clearfix:after { 
+  clear:both; 
+  overflow:hidden; 
+} 
+.clearfix { 
+  zoom:1; /* for IE6 IE7 */ 
+} 
+.clear{ 
+  clear:both; 
+  display:block; 
+  overflow:hidden; 
+  height:0; 
+  line-height:0; 
+  font-size:0; 
+}
+/* 设置显示和隐藏, 通常用来与 JS 配合 */ 
+.hide { 
+/*!important最高权重*/
+  display:none !important; 
+  visibility:hidden; 
+} 
+  .block { 
+  display:block !important; 
+} 
+/* 设置内联, 减少浮动带来的bug */ 
+.fl { 
+  float:left; 
+  display:inline; 
+} 
+.fr { 
+  float:right; 
+  display:inline; 
+}
+page{
+  background-color: #F7F4F8 !important;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index',/*首頁*/
+      'pages/sell',/*買車*/
+      'pages/personal',/*個人中心*/
+      'pages/city',/*選擇城市*/
+      'pages/detail',/*產品詳情*/
+      'pages/userDetails',/*用户详情页*/
+      'pages/report',/*举报页*/
+      'pages/release',/*我的发布*/
+      'pages/collection',/*我的收藏*/
+      'pages/follow',/*我的关注*/
+      'pages/attention',/*关注我的*/
+      'pages/bindphone'/*绑定手机号*/
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    },
+    "tabBar": {
+      'color':'#818181',
+      'selectedColor':'#02B6AD',
+      "list": [
+        {
+          "pagePath": "pages/index",
+          "text": "买 车",
+          'iconPath':'assets/images/buy.png',
+          'selectedIconPath':'assets/images/buyc.png'
+        },
+        {
+          "pagePath": "pages/sell",
+          "text": "卖 车",
+          'iconPath':'assets/images/sell.png',
+          'selectedIconPath':'assets/images/sellc.png'
+        },
+        {
+          "pagePath": "pages/personal",
+          "text": "我 的",
+          'iconPath':'assets/images/my.png',
+          'selectedIconPath':'assets/images/myc.png'
+        }
+      ]
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+  }
+
+  onLaunch() {
+    this.testAsync()
+  }
+
+  sleep (s) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise resolved')
+      }, s * 1000)
+    })
+  }
+
+  async testAsync () {
+    const data = await this.sleep(3)
+    console.log(data)
+  }
+
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success (res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+}
+</script>

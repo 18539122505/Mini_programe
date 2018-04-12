@@ -1,0 +1,297 @@
+<style lang="less">
+.detail{
+    background-color: #F7F4F8;
+    padding-bottom: 110rpx;
+    /*轮播*/
+    .carousel{
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        swiper{
+            height: 550rpx;
+            .slide-image{
+                display: block ;
+                width: 100% !important;
+                height: 550rpx;
+            }
+        }
+        .num{
+            display: inline-block;
+            position: absolute;
+            font-size: 22rpx;
+            line-height: 44rpx;
+            color: #ffffff;
+            padding: 0 20rpx;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10rpx;
+            bottom: 32rpx;
+            right: 0;
+        }
+    }
+    /*设备信息*/
+    .proMsg{
+        width: 710rpx;
+        padding: 24rpx 20rpx;
+        background-color:#ffffff;
+        .tit{
+            font-size: 30rpx;
+            font-weight: bold;
+            color: #333333;
+            line-height: 44rpx;
+            .share{
+                font-size: 30rpx;
+                color: #CDCCC8;
+                font-weight: 100;
+            }
+        }
+        .intro{
+            font-size: 26rpx;
+            line-height: 46rpx;
+            color: #999999;
+            b{
+                color: #666666;
+            }
+            i{
+                display: inline-block;
+                padding: 0 10rpx;
+            }
+        }
+
+    }
+    /**/
+    .msg{
+        padding: 0 20rpx;
+        margin-top: 20rpx;
+        background-color: #ffffff;
+        .li{
+            line-height: 88rpx;
+            border-bottom: 1rpx solid #EEEEEE;
+            color: #999999;
+            font-size: 28rpx;
+            span{
+                font-size: 28rpx;
+                display: inline-block;
+                padding-right: 30rpx !important;
+                color: #333333;
+            }
+            .icon-jubao{
+                color:#02B6AD;
+                font-size: 28rpx;
+            }
+            .icon-xiangyou{
+                color: #9D9D9D;
+                font-size: 28rpx;
+            }
+            b{
+                color: #ff0000;
+            }
+        }
+        .intro_text{
+            font-size: 28rpx;
+            line-height: 88rpx;
+            color: #999999;
+        }
+    }
+    /*评价*/
+    .evaluate{
+        display: block;
+        width: 710rpx;
+        padding: 20rpx;
+        margin-top: 20rpx;
+        background-color: #ffffff;
+        header{
+            display: block;
+            line-height: 70rpx;
+            border-bottom: 1rpx solid #EEEEEE;
+            title{
+                font-size: 28rpx;
+                color: #333333;
+            }
+            text{
+                font-size: 22rpx;
+                color: #999999;
+            }
+        }
+        main{
+            display: block;
+            padding: 20rpx 0;
+            p{
+                display: block;
+                font-size: 22rpx;
+                line-height: 40rpx;
+                color: #999999;
+                username{
+                    color: #04b7ae;
+                }
+            }
+        }
+    }
+    /*交易提醒*/
+    .warn{
+        display: block;
+        width: 710rpx;
+        padding: 20rpx;
+        margin-top: 20rpx;
+        background-color: #ffffff;
+        header{
+            display: block;
+            line-height: 70rpx;
+            border-bottom: 1rpx solid #EEEEEE;
+            title{
+                font-size: 28rpx;
+                color: #333333;
+            }
+        }
+        main{
+            display: block;
+            padding: 20rpx 0;
+            p{
+                display: block;
+                font-size: 22rpx;
+                line-height: 40rpx;
+                color: #999999;
+            }
+        }
+    }
+    .operation{
+        position: fixed;
+        bottom: 0;
+        width: 750rpx;
+        .li{
+            display: inline-block;
+            width: 250rpx;
+            text-align: center;
+            line-height: 90rpx;
+            font-size: 30rpx;
+            color:#ffffff;
+        }
+        .follow{
+            background-color: #CCCCCC;
+        }
+        .more{
+            background-color: #FFB400;
+        }
+        .phone{
+            background-color: #02B6AD;
+        }
+    }
+}
+</style>
+<template>
+  <view class="detail">
+    <!--轮播-->
+    <view class="carousel">
+        <swiper indicator-dots="{{indicatorDots}}"
+            indicator-color="#DFD8CE"
+            indicator-active-color="#FFFFFF"
+            circular="{{true}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+            </block>
+        </swiper>
+        <view class="num">设备编号：117866</view>
+    </view>
+    <!--设备信息-->
+    <view class="proMsg">
+        <view class="tit clearfix">转让森源重工2014年8吨吊车<i class="iconfont icon-fenxiang fr share">分享</i></view>
+        <view class="intro addres"><b>设备所在地：</b>河南省洛阳市嵩县洛栾线</view>
+        <view class="intro fTime"><b>发布时间：</b>4分钟前<i>|</i>浏览：40<i>|</i>收藏：0</view>
+        <view class="intro gTime"><b>更新时间：</b>4分钟前</view>    
+    </view>
+    <!--设施信息-->
+    <view class="msg">
+        <view class="li brand">
+            <span>品牌：</span>森源起重<i class="iconfont icon-jubao fr" bindtap="jumpReport">举报</i>
+        </view>
+        <view class="li price">
+            <span>价格：</span><b>13.00万</b>
+        </view>
+        <view class="li master" bindtap="jump">
+            <span>机主：</span>A嵩县《嘉运吊车》<i class="iconfont icon-xiangyou fr"></i>
+        </view>
+        <view class="li intro">
+            <span>设备介绍：</span>
+        </view>
+        <view class="intro_text">
+            14年4月手续齐全
+        </view>
+    </view>
+    <!--评价-->
+    <view class="evaluate">
+        <header class="clearfix">
+            <title class="fl">评价</title>
+            <text class="fr">发表评论</text>
+        </header>
+        <main>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+            <p><username>A联创吊装二手吊..：</username>一二三四五六七八九</p>
+        </main>
+    </view>
+    <!--交易提醒-->
+    <view class="warn">
+        <header class="clearfix">
+            <title class="fl">交易提醒</title>
+        </header>
+        <main>
+            <p>1. 我们仅为买卖双方提供平台，所有设备均为用户自主发布。我们力求提供真实可靠的设备信息，但无法核实所有信息的真实性、有效性。我们不参与交易环节。</p>
+            <p>2. 未见实物，先交定金的，风险极高！</p>
+            <p>3. 动身看货前需先确认产品型号、设备是否还在、产权是否清晰等重要信息，以免白跑一趟。</p>
+            <p>4. 价格远低于市场价请慎重购买，要深刻理解一分钱一分货的道理。</p>
+            <p>5. 仔细检查设备能否正常使用。</p>
+            <p>6. 认真核对发票、质保证书、身份证、营业执照等信息，并拍照留存。</p>
+            <p>7. 收货验货时请仔细核对，谨防掉包。</p>
+        </main>
+    </view>
+    <!--操作栏-->
+    <view class="operation">
+        <view class="li follow">关注</view>
+        <view class="li more">更多设备</view>
+        <view class="li phone">电话联系</view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class detail extends wepy.page {
+    config={
+        navigationBarTitleText: '设备详情',
+        backgroundColor:'#F7F4F8'
+    }
+    data={
+        indicatorDots: true,
+        autoplay: true,
+        interval: 5000,
+        duration: 1000,
+        imgUrls: [
+            'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+            'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+            'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+        ]
+    }
+    methods={
+        jump:function(){
+            wx.navigateTo({
+                url:'userDetails?userid=111'
+            })
+        },
+        jumpReport:function(){
+            wx.navigateTo({
+                url:'report?jubao=13456'
+            })
+        }
+    }
+    onLoad(options){
+        console.log(options.id)
+    }
+}
+</script>

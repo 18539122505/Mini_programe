@@ -1,0 +1,334 @@
+<style lang="less">
+@import '../assets/weui/style/widget/weui-cell/weui-cell.wxss';
+@import '../assets/weui/style/widget/weui-cell/weui-form/weui-select.wxss';
+  .content{
+    display: block;
+    background-color: #F7F4F8;
+    /*广告*/
+    .banner{
+      display: block;
+      padding: 0 20rpx;
+      width: 710rpx;
+      background-color: #F0FFFE;
+      font-size: 28rpx;
+      line-height: 70rpx;
+      i{
+        font-size: 36rpx;
+        color: #02B6AD;
+        vertical-align: middle;
+      }
+      im{
+        display: inline-block;
+        color: #02B6AD;
+        padding-left: 22rpx;
+        padding-right: 20rpx;
+        vertical-align: middle;
+      }
+      msg{
+        color: #666666;
+        vertical-align: middle;
+      }
+    }
+    /*选择设备类型*/
+    .weui-cell{
+      background-color: #ffffff;
+      font-size: 30rpx;
+      line-height: 70rpx;
+      .weui-cell__hd_in-select-after{
+        padding-left: 20rpx;
+        padding-right: 70rpx;
+        color: #4a4a4a;
+      }
+      .weui-cell__bd{
+        picker{
+          .weui-select{
+            border-right: 0;
+          }
+        }
+      }
+    }
+    .weui-cell_input{
+      padding: 0 20rpx;
+      font-size: 30rpx;
+      .weui-cell__hd{
+        padding-right: 70rpx;
+      }
+      .weui-cell__bd{
+        .my-input{
+          display: inline-block;
+          width: 465rpx;
+          vertical-align: middle;
+        }
+        span{
+          display: inline-block;
+          vertical-align: middle;
+          color: #999999;
+        }
+      }
+    }
+    .weui-cells{
+      .weui-cell{
+        padding: 0 20rpx;
+        background-color: #F7F7F7 !important;
+      }
+    }
+    .uploadBox{
+      padding: 0 20rpx;
+      width: 710rpx;
+      background-color: #ffffff;
+      .top{
+        display: block;
+        line-height: 78rpx;
+        tit{
+          display: block;
+          font-size: 30rpx;
+          color: #4a4a4a;
+        }
+        number{
+          display: block;
+          font-size: 22rpx;
+          color: #999999;
+        }
+      }
+      .bottom{
+        display: block;
+        padding: 10rpx 0;
+        .imgBox{
+          display: inline-block;
+          width: 100rpx;
+          height: 100rpx;
+          padding: 0 10rpx;
+          position:relative;
+          image{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          .del{
+            display: inline-block;
+            font-size: 16px;
+            color: #999999;
+            position: absolute;
+            right: -10rpx;
+            top: -20rpx;
+          }
+        }
+        .btn_upload{
+          display:inline-block;
+          width: 100rpx;
+          height: 100rpx;
+          margin-left: 45rpx;
+          image{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .sub{
+      display: block;
+      padding: 20rpx;
+      width: 710rpx;
+      button{
+        display: block;
+        width: 710rpx;
+        background-color: #0FCABF;
+        color: #ffffff;
+        font-size: 30rpx;
+        line-height: 76rpx;
+        margin: 0 auto;
+      }
+    }
+  }
+</style>
+
+<template>
+  <view class="content">
+    <!-- 广告栏-->
+    <view class="banner">
+      <i class="iconfont icon-tongzhi"></i><im>省机械公司</im><msg>55.00万中联2014年20吨吊车</msg>
+    </view>    
+    <!--设备类型-->
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">设备类型</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+          <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    <!--设备品牌-->
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">设备品牌</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
+          <view class="weui-select weui-select_in-select-after">{{countries[countryIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    <!--出场年份-->
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">出场年份</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  mode="date" fields="year" start="{{years}}" value="{{years}}" bindchange="changeYears">
+          <view class="weui-select weui-select_in-select-after">{{years}}</view>
+        </picker>
+      </view>
+    </view>
+    <!--输入设备型号-->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">设备型号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="如：QUY50"/>
+      </view>
+    </view>
+    <!--转让价格-->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">转让价格</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input my-input" placeholder="转让价格"/>
+        <span>万元</span>
+      </view>
+    </view>
+    <!--设备介绍-->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">转让价格</view>
+      </view>
+      <view class="weui-cell__bd clearfix">
+        <span class="fr">80个字以内</span>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="手续、分期、工作时长、工作状况等..." style="height: 105rpx" value="{{intro}}"/>
+            <view class="weui-textarea-counter">{{fontNum}}/200</view>
+        </view>
+      </view>
+    </view>
+    <!--上传照片-->
+    <view class="uploadBox">
+      <view class="top clearfix">
+        <tit class="fl">设备图片</tit>
+        <number class="fr">3-9张</number>
+      </view>
+      <view class="bottom">
+        <repeat for="{{uploadImg}}" key="index" index="index" item="item">
+          <view class="imgBox">
+            <image src="{{item}}" bindtap="watchImg({{item}})"/> 
+            <i class="iconfont icon-guanbi del" bindtap="delImg({{index}})"></i>
+          </view>
+        </repeat>
+        <view class="btn_upload">
+          <image src="../assets/images/add.png" bindtap="uploadImg"/>
+        </view>
+      </view>
+    </view>  
+    <!--联系人-->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系人</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="联系人姓名"/>
+      </view>
+    </view>
+    <!--手机号-->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input"/>
+      </view>
+    </view>
+    <!--设备地址-->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">设备地址</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" value="{{address}}"/>
+      </view>
+    </view>
+    <!--保存-->
+    <view class="sub">
+      <button>保存</button>
+    </view>
+  </view>  
+</template>
+<script>
+import wepy from 'wepy';
+export default class Sell extends wepy.page {
+  config = {
+    navigationBarTitleText: '我要卖车',
+    backgroundColor:'#F7F4F8'
+  }
+  data={
+    countries: ["起重机", "电动葫芦", "电动开关"],
+    countryIndex: 0,
+
+    years:1989,
+    intro:'',
+
+    address:'河南省金水区经三路93号',
+
+    uploadImg:[]
+  }
+  methods={
+    bindCountryChange: function(e) {
+        console.log('picker country 发生选择改变，携带值为', e.detail.value);
+        this.countryIndex = e.detail.value;
+    },
+    changeYears:function(e){
+      this.years = e.detail.value
+    },
+    /*点击上传图片*/
+    uploadImg:function(){
+      let _that = this;
+      wx.chooseImage({
+        count:9,
+        success:function(res){
+          console.log(res);
+          res.tempFilePaths.map(path=>{
+            return _that.uploadImg.push(path);
+          });
+          _that.uploadImg = _that.uploadImg.splice(0,9);
+        },
+        fail:function(res){
+          console.log(res);
+        }
+      });
+    },
+    delImg:function(index){
+      this.uploadImg = this.uploadImg.filter((value,key)=>{
+        return key != index;
+      })
+    },
+    watchImg:function(currentPath){
+      let _that = this;
+      wx.previewImage({
+        urls:_that.uploadImg,
+        current:currentPath
+      })
+    }
+  }
+  computed={
+    fontNum(){
+      return this.intro.length?this.intro.length:0;
+    }
+  }
+}
+</script>

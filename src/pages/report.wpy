@@ -1,0 +1,150 @@
+<style lang="less">
+@import '../assets/weui/style/widget/weui-cell/weui-cell.wxss';
+    .report{
+        background-color: #F7F4F8;
+        .ques{
+            display: block;
+            padding: 0 20rpx;
+            width: 710rpx;
+            background-color: #ffffff;
+            font-size: 30rpx;
+            line-height: 82rpx;
+            color: #333333;
+            i{
+                display: inline-block;
+                font-size: 30rpx;
+                color: #02B6AD;
+                padding-right: 10rpx;
+            }
+        }
+        .answer{
+            display: block;
+            width: 710rpx;
+            padding: 0 20rpx;
+            background-color: #ffffff;
+            .answerLi{
+                line-height: 50rpx;
+                font-size: 28rpx;
+                color: #333333;
+               
+                box{
+                    display: inline-block;
+                    i{
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+                checkText{
+                    display: inline-block;
+                    padding-left: 16rpx;
+                }
+            }
+        }
+        .explain{
+            display: block;
+            width: 710rpx;
+            padding: 0 20rpx;
+            background-color:#FFFFFF;
+            padding-bottom: 48rpx;
+            .header{
+                display: block;
+                font-size: 28rpx;
+                color: #333333;
+                line-height:70rpx;
+
+            }
+            textarea{
+                background-color: #F7F7F7;
+                font-size: 22rpx;
+                padding: 20rpx;
+                width: 670rpx;
+                line-height: 34rpx;
+                &::-webkit-input-placeholder{
+                    font-size: 22rpx !important;
+                    color: #999999;
+                }
+            }
+        }
+        .submit{
+            display: block;
+            padding: 30rpx 20rpx;
+            width: 710rpx;
+            sub{
+                display: block;
+                font-size: 30rpx;
+                color: #ffffff;
+                line-height: 76rpx;
+                background-color: #16BCB3;
+                border-radius: 5rpx;
+                text-align: center;
+            }
+        }
+    }
+</style>
+<template>
+  <view class="report">
+    <view class="ques"><i class="iconfont icon-jubao"></i>您为何要举报此信息？</view>
+    <checkbox-group bindchange="checkboxChange" class="answer">
+        <label class="checkbox" wx:for="{{checkboxItems}}">
+            <checkbox style="position:absolute;left:-99999px;" value="{{item.name}}" checked="{{item.checked}}"/>
+            <view class="answerLi">
+                <box class="checkbox">
+                    <i class="iconfont icon-YDUI-fuxuankuang" style="color:#666666;font-size:28rpx;" wx:if="{{!item.checked}}"></i>
+                    <i class="iconfont icon-YDUI-fuxuankuangxuanzhong1" style="color:#02B6AD;font-size:28rpx;" wx:if="{{item.checked}}"></i>
+                </box>
+                <checkText>
+                    {{item.name}}
+                </checkText>
+            </view>
+        </label>
+    </checkbox-group>
+    <!--举报说明-->
+    <view class="explain">
+        <view class="header">举报说明 （必填）：</view>
+        <textarea class="weui-textarea" placeholder="请输入您要举报的内容..." style="height: 140rpx" value="{{intro}}"/>
+    </view>
+    <!--提交-->
+    <view class="submit">
+        <sub>提交</sub>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class report extends wepy.page {
+  config={
+    navigationBarTitleText: '举报',
+    backgroundColor:'#F7F4F8'
+  }
+  data={
+        checkboxItems: [
+            {name: '与话题无关', value: '0', checked: true},
+            {name: '虚假信息', value: '1'},
+            {name: '广告', value: '2'},
+            {name: '其他', value: '3'}
+        ],
+        intro:''
+  }
+  onLoad(options){
+      console.log(options.jubao);
+  }
+  methods={
+    checkboxChange:function(e){
+        var checkboxItems = this.checkboxItems, values = e.detail.value;
+        for (var i = 0, lenI = checkboxItems.length; i < lenI; ++i) {
+            checkboxItems[i].checked = false;
+
+            for (var j = 0, lenJ = values.length; j < lenJ; ++j) {
+                if(checkboxItems[i].name == values[j]){
+                    checkboxItems[i].checked = true;
+                    break;
+                }
+            }
+        }
+        this.checkboxItems = checkboxItems;
+    }
+  }
+}
+</script>
+
+

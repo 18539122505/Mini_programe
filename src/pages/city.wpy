@@ -1,0 +1,15 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="personal">
+    選擇城市頁面
+     <!-- <qizhNav routetext="personal"></qizhNav> -->
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class City extends wepy.page {
+
+}
+</script>

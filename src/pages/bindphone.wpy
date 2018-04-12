@@ -1,0 +1,139 @@
+<style lang="less">
+    .bind_phone{
+        display: block;
+        .banner{
+            display: block;
+            padding: 0 20rpx;
+            width: 710rpx;
+            background-color: #F0FFFE;
+            font-size: 28rpx;
+            line-height: 70rpx;
+            i{
+                font-size: 36rpx;
+                color: #02B6AD;
+                vertical-align: middle;
+            }
+            msg{
+                display: inline-block;
+                padding-left: 20rpx;
+                color: #666666;
+                vertical-align: middle;
+            }
+        }
+        .input_box{
+            width: 710rpx;
+            padding: 0 20rpx;
+            background-color: #FFFFFF;
+            .box{
+                padding: 15rpx 0;
+                font-size: 28rpx;
+                line-height: 56rpx;
+                border-bottom: 1rpx solid #EEEEEE;
+                .label{
+                    display: inline-block;
+                    color: #333333;
+                    vertical-align: middle;
+                    padding-right: 28rpx;
+                    line-height: 56rpx;
+                }
+                input{
+                    display: inline-block;
+                    width: 570rpx;
+                    vertical-align: middle;
+                    padding-left: 14rpx;
+                    line-height: 56rpx;
+                }
+                .yz{
+                    width: 400rpx !important;
+                }
+                a{
+                    display: block;
+                    width: 160rpx;
+                    background-color: #3FD5CC;
+                    color: #ffffff;
+                    border-radius: 5rpx;
+                    text-align: center;
+                }
+            }
+            .noborder{
+                border: 0 !important;
+            }
+        }
+        .phone_login{
+            display: block;
+            width: 710rpx;
+            margin-top: 50rpx;
+            padding: 0 20rpx;
+            a{
+                display: block;
+                font-size: 30rpx;
+                line-height: 76rpx;
+                color: #FFFFFF;
+                background-color: #16BEB4;
+                text-align: center;
+                border-radius: 7rpx;
+            }
+        }
+        .weichat_login{
+            display: block;
+            width: 710rpx;
+            margin-top: 30rpx;
+            padding: 0 20rpx;
+            a{
+                display: block;
+                font-size: 30rpx;
+                line-height: 74rpx;
+                color: #16BEB4;
+                text-align: center;
+                border-radius: 7rpx;
+                border: 1rpx solid #16BEB4;
+            }
+        }
+    }
+</style>
+<template>
+    <view class="bind_phone">
+        <!-- 广告栏-->
+        <view class="banner">
+            <i class="iconfont icon-tongzhi"></i><msg>提醒：您必须绑定手机号码，才能进行后续操作</msg>
+        </view> 
+        <view class="input_box">
+            <!-- 联系人-->
+            <view class="box clearfix">
+                <view class="label fl">联系人</view><input placeholder="请输入您的姓名" class="fl"></input>
+            </view>
+            <!-- 联系人-->
+            <view class="box clearfix">
+                <view class="label fl">手机号</view><input placeholder="请输入手机号码" class="fl"></input>
+            </view>
+            <!-- 联系人-->
+            <view class="box noborder clearfix">
+                <view class="label fl">验证码</view><input placeholder="短信验证码" class="fl yz"></input><a class="fr">获取验证码</a>
+            </view>
+        </view>
+        <!--手机登录-->
+        <view class="phone_login">
+            <a>手机登录</a>
+        </view>
+        <!--微信登录-->
+        <view class="weichat_login">
+            <a>微信登录</a>
+        </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class bindphone extends wepy.page {
+  config={
+    navigationBarTitleText: '绑定手机号码',
+    backgroundColor:'#F7F4F8'
+  }
+  data={
+
+  }
+  methods={
+
+  }
+}
+</script>
+

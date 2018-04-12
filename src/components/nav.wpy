@@ -1,0 +1,82 @@
+<style lang="less">
+    .qizh_nav{
+        width: 19.1466rem;
+        background-color: yellow;
+        position: fixed;
+        bottom: 0;
+        padding: 0.32rem 0.4267rem 0 0.4267rem;
+        background-color: #FFFFFF;
+        navigator{
+            width: 33.3%;
+            // text-align: center;
+            a{
+                display: inline-block;
+                font-size: 0.8533rem;
+                text-align: center;
+                
+            }
+            .buy{
+                margin-left: 2.0267rem;
+                .iconfont{
+                    display: block;
+                    font-size: 1.8rem;
+                }
+            }
+            .sell{
+                margin-left: 2.125rem;
+                .iconfont{
+                    display: block;
+                    font-size: 1.8rem;
+                }
+            }
+            .my{
+                margin-left: 2.0267rem;
+                .iconfont{
+                    display: block;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        .selected{
+            color: red !important
+        }
+    }
+</style>
+
+<template>
+  <nav class="qizh_nav clearfix">
+        <navigator class="fl" url="index" redirect="true" hover-class="navigator-hover">
+            <a href="javascript:0;" class="{{routetext === 'index'?'buy selected':'buy'}}">
+                <i class="iconfont icon-jiqi"></i>       
+                <span>买车</span>
+            </a> 
+        </navigator>
+      <navigator class="fl" url="index" redirect="true" hover-class="navigator-hover">
+            <a href="javascript:0;" class="{{routetext === 'sell'?'sell selected':'sell'}}">
+                <i class="iconfont icon-fabuxinxi"></i>      
+                <span>卖车</span>
+            </a> 
+      </navigator>
+      <navigator class="fl" url="personal" redirect="true" hover-class="navigator-hover">
+            <a href="javascript:0;" class="{{routetext === 'personal'?'my selected':'my'}}">
+                <i class="iconfont icon-gerenzhongxin"></i>
+                <span>我的</span>
+            </a> 
+      </navigator>
+  </nav>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Nav extends wepy.component{
+    data={
+
+    }
+    props={
+        routetext:{
+            type:String,
+            default:'index'
+        }
+    }
+}
+</script>
+

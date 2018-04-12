@@ -1,0 +1,118 @@
+<style lang="less">
+    .follow{
+        display: block;
+        .followList{
+            display: block;
+            .followLi{
+                width: 710rpx;
+                padding: 15rpx 20rpx;
+                background-color: #ffffff;
+                margin-bottom: 20rpx;
+                .imgIcon{
+                    display: inline-block;
+                    width: 95rpx;
+                    height: 95rpx;
+                    vertical-align: middle !important;
+                    image{
+                        display: block;
+                        width: 95rpx;
+                        height: 95rpx;
+                        border-radius: 50%;
+                    }
+                }
+                .text{
+                    display: inline-block;
+                    padding-left: 24rpx;
+                    vertical-align: middle !important;
+                    .userNameP{
+                        font-size: 30rpx;
+                        color: #333333;
+                        line-height: 45rpx;
+                    }
+                    .msg{
+                        font-size: 26rpx;
+                        color: #666666;
+                        line-height: 50rpx;
+                        span{
+                            display: inline-block;
+                            margin-right: 20rpx;
+                        }
+                    }
+                }
+                .btn_follow{
+                    display: inline-block;
+                    vertical-align: middle !important;
+                    a{
+                        display: block;
+                        font-size: 25rpx;
+                        line-height: 45rpx;
+                        color: #ffffff;
+                        width: 140rpx;
+                        text-align: center;
+                        border-radius: 30rpx;
+                        background-color: #999999;
+                        margin-top: 32rpx;
+                    }
+                }
+            }
+            
+        }
+    }
+</style>
+<template>
+  <view class="follow">
+      <view class="followList">
+          <repeat for="{{followList}}" key="index" index="index" item="item">
+            <view class="followLi clearfix">
+                <view class="imgIcon fl">
+                    <image src="{{item.userIcon}}"/>
+                </view>
+                <view class="text fl">
+                    <view class="userName">{{item.userName}}</view>
+                    <view class="msg">
+                        <span>在售：{{item.count}}{{item.unit}};</span><span>已售：{{item.yCount}}{{item.unit}};</span>
+                    </view>
+                </view>
+                <view class="btn_follow fr">
+                    <a class="cencel_follow">取消关注</a>
+                </view>
+            </view>
+          </repeat>
+      </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class follow extends wepy.page {
+    config={
+        navigationBarTitleText: '我的关注',
+        backgroundColor:'#F7F4F8'
+    }
+    data={
+        followList:[
+            {
+                userIcon:'../assets/images/my.png',
+                userName:'苏格拉没有底',
+                count:2,
+                yCount:0,
+                unit:'个'
+            },
+            {
+                userIcon:'../assets/images/myc.png',
+                userName:'AAA专业起重机',
+                count:52,
+                yCount:36,
+                unit:'台'
+            }
+        ]
+    }
+    methods={
+
+    }
+    onLoad(options){
+        console.log(options.userid)
+    }
+}
+</script>
+
+

@@ -1,0 +1,149 @@
+<style lang="less">
+    .release{
+        /*产品列表*/
+        .proList{
+            margin-top: 20rpx;
+            .proLi{
+                display: block;
+                padding: 15rpx 20rpx;
+                background-color: #ffffff;
+                margin-bottom: 20rpx;
+                .image_icon{
+                    display: block;
+                    width: 206rpx;
+                    height: 174rpx;
+                    image{
+                        display: block;
+                        width: 206rpx !important;
+                        height: 174rpx !important;
+                        border-radius: 8rpx !important;
+                    }
+                }
+                .pro_text{
+                    width: 484rpx;
+                    padding-left: 16rpx;
+                    p{
+                        display: block;
+                    }
+                    .tit{
+                        font-size: 30rpx;
+                        color: #333333;
+                        line-height: 40rpx;
+                        i{
+                            font-size: 24rpx;
+                            color: #999999;
+                        }
+                    }
+                    .intro{
+                        font-size: 26rpx;
+                        color: #666666;
+                        line-height: 40rpx;
+                    }
+                    .price{
+                        font-size: 30rpx;
+                        color: #ff0000;
+                        line-height: 54rpx;
+                    }
+                    .state{
+                        font-size: 22rpx;
+                        color: #999999;
+                        .btn_group{
+                            display:block;
+                            a{
+                                display: inline-block;
+                                width: 100rpx;
+                                font-size: 25rpx;
+                                line-height: 45rpx;
+                                color: #ffffff;
+                                text-align: center;
+                                border-radius: 30rpx;
+                            }
+                            .edit{
+                                background-color: #16BCB3;
+                            }
+                            .del{
+                                margin-left: 10rpx;
+                                background-color: #999999;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
+<template>
+    <view class="release">
+        <!--产品列表-->
+        <view class="proList">
+            <repeat for="{{product}}" key="index" index="index" item="item">
+                <view class="proLi clearfix">
+                    <view class="image_icon fl">
+                        <image src="{{item.img}}"/>
+                    </view>
+                    <view class="pro_text fr">
+                        <p class="tit">{{item.tit}}<i class="iconfont icon-fenxiang fr">分享</i></p>
+                        <p class="intro">{{item.intro}}</p>
+                        <p class="price"><b>{{item.price}}</b>万</p>
+                        <p class="state clearfix">
+                            {{item.time}}分钟前
+                            <view class="btn_group fr">
+                                <a class="edit">编辑</a><a class="del">删除</a>
+                            </view>
+                        </p>
+                    </view>
+                </view>    
+            </repeat>
+        </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class release extends wepy.page {
+    config={
+        navigationBarTitleText: '我发布的',
+        backgroundColor:'#F7F4F8'
+    }
+    data={
+        product:[
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'14.5',
+                time:'8',
+                count:225
+            },
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'17.5',
+                time:'8',
+                count:225
+            },
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'20.5',
+                time:'8',
+                count:225
+            },
+            {
+                img:'../assets/images/my.png',
+                tit:'长江2018年全新20吨...',
+                intro:'车况良好，手续齐全，砍价勿扰',
+                price:'40.5',
+                time:'8',
+                count:225
+            }
+        ]
+    }
+    onLoad(options){
+        console.log(options.userid)
+    }
+}
+</script>
+
+
