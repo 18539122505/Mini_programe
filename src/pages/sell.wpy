@@ -227,7 +227,7 @@
       <view class="weui-cell">
         <view class="weui-cell__bd">
           <textarea class="weui-textarea" placeholder="手续、分期、工作时长、工作状况等..." style="width:710rpx;height: 150rpx;padding:20rpx 0;" value="{{intro}}"/>
-            <view class="weui-textarea-counter" style="text-align:right;color:#999999">{{fontNum}}/200</view>
+            <!-- <view class="weui-textarea-counter" style="text-align:right;color:#999999">{{fontNum}}/200</view> -->
         </view>
       </view>
     </view>
