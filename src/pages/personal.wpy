@@ -100,7 +100,7 @@
           type="default-light" 
           session-from="weapp"
           open-type="contact"
-        >资讯反馈
+        >资询反馈
         </button>
         </cont>
         <i class="iconfont icon-xiangyou fr"></i><intro class="fr">实时动态</intro>
