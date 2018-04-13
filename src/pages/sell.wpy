@@ -145,6 +145,21 @@
         margin: 0 auto;
       }
     }
+    .section{
+      display: block;
+      padding: 0 20rpx;
+      line-height: 90rpx;
+      font-size: 30rpx;
+      background-color: #ffffff;
+      picker{
+        display: block;
+        border-bottom: 1rpx solid #eeeeee;
+        bor{
+          display: inline-block;
+          padding-right: 70rpx;
+        }
+      }
+    }
     .warning{
       display: block;
       padding: 20rpx;
@@ -217,7 +232,7 @@
     <!--设备介绍-->
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
-        <view class="weui-label">转让价格</view>
+        <view class="weui-label">设备详情</view>
       </view>
       <view class="weui-cell__bd clearfix">
         <span class="fr">80个字以内</span>
@@ -267,6 +282,14 @@
         <input class="weui-input"/>
       </view>
     </view>
+    <!--选择省市区-->
+    <view class="section">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          <bor>当前选择</bor>{{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
     <!--设备地址-->
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -300,9 +323,12 @@ export default class Sell extends wepy.page {
     years:1989,
     intro:'',
 
-    address:'河南省金水区经三路93号',
+    address:'经三路广电路东北角鑫苑金融广场银座',
 
-    uploadImg:[]
+    uploadImg:[],
+
+    region: ['河南省', '郑州市', '金水区'],
+    customItem: '全部'
   }
   methods={
     bindCountryChange: function(e) {
@@ -340,6 +366,11 @@ export default class Sell extends wepy.page {
         urls:_that.uploadImg,
         current:currentPath
       })
+    },
+    /*地区选择器*/
+    bindRegionChange: function (e) {
+      console.log('picker发送选择改变，携带值为', e.detail.value)
+      this.region = e.detail.value;
     }
   }
   computed={
