@@ -107,20 +107,20 @@ export default class extends wepy.app {
         {
           "pagePath": "pages/index",
           "text": "买 车",
-          'iconPath':'assets/images/buy.png',
-          'selectedIconPath':'assets/images/buyc.png'
+          'iconPath':'assets/images/jq.png',
+          'selectedIconPath':'assets/images/sjq.png'
         },
         {
           "pagePath": "pages/sell",
           "text": "卖 车",
-          'iconPath':'assets/images/sell.png',
-          'selectedIconPath':'assets/images/sellc.png'
+          'iconPath':'assets/images/wfb.png',
+          'selectedIconPath':'assets/images/swfb.png'
         },
         {
           "pagePath": "pages/personal",
           "text": "我 的",
-          'iconPath':'assets/images/my.png',
-          'selectedIconPath':'assets/images/myc.png'
+          'iconPath':'assets/images/wd.png',
+          'selectedIconPath':'assets/images/swd.png'
         }
       ]
     }

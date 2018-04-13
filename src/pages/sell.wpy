@@ -272,8 +272,6 @@
     <view class="sub">
       <button>保存</button>
     </view>
-    <!--警告-->
-    
   </view>  
 </template>
 <script>
