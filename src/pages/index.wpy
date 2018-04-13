@@ -503,7 +503,11 @@
         this.isShowDialog = !this.isShowDialog;
         if(!this.isShowDialog){
           this.isShow = -1;
+          return
         }
+        this.isShowTypeDialog=false;
+        this.isShowBrandDialog=false;
+        this.isShowSortDialog=false;
       },
       /*城市子分类选择*/
       childSelCity:function(index){
@@ -515,7 +519,11 @@
         this.isShowTypeDialog = !this.isShowTypeDialog
         if(!this.isShowTypeDialog){
           this.isShow = -1;
+          return
         }
+        this.isShowDialog=false;
+        this.isShowBrandDialog=false;
+        this.isShowSortDialog=false;
       },
       /*分类子分类选择*/
       childSelType:function(item){
@@ -527,14 +535,18 @@
         this.isShowBrandDialog = !this.isShowBrandDialog;
         if(!this.isShowBrandDialog){
           this.isShow = -1;
+          return
         }
+        this.isShowDialog=false;
+        this.isShowTypeDialog=false;
+        this.isShowSortDialog=false;
       },
       childSelBrand:function(item){
         this.childBrand = item;
       },
       /*展示年份
       showYear:function(index){
-        this.isShow = index;
+        this.isShow = index; 
         this.isShowDialog = !this.isShowDialog;
       },
       childSelYear:function(item){
@@ -546,7 +558,11 @@
         this.isShowSortDialog = !this.isShowSortDialog;
         if(!this.isShowSortDialog){
           this.isShow = -1;
+          return;
         }
+        this.isShowDialo=false;
+        this.isShowTypeDialog=false;
+        this.isShowBrandDialog=false;
       },
       /*选择排序*/
       selSort:function(index){
