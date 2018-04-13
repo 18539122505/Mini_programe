@@ -39,7 +39,7 @@
     .weui-cell{
       background-color: #ffffff;
       font-size: 30rpx;
-      line-height: 70rpx;
+      line-height: 90rpx;
       .weui-cell__hd_in-select-after{
         padding-left: 20rpx;
         padding-right: 70rpx;
