@@ -11,7 +11,7 @@
     swiper{
       height: 375rpx;
       .slide-image{
-        display: block ;
+        display: block;
         width: 100% !important;
         height: 375rpx;
       }
@@ -153,7 +153,7 @@
           width: 75rpx;
         }
         .userMsg{
-          width: 598rpx;
+          width: 596rpx;
           padding-left: 15rpx;
           .userName{
             display: block;
@@ -182,11 +182,10 @@
             font-size: 30rpx;
             color: #333333;
             line-height: 46rpx;
-            .price{
+          }
+          .price{
               display: inline-block;
               color: #ff0000;
-              padding-left: 32rpx;
-            }
           }
           .intro{
             display: block;
@@ -200,7 +199,7 @@
             padding: 16rpx 0;
             image{
               display: inline-block;
-              width: 198rpx;
+              width: 196rpx;
               height: 174rpx;
             }
             .mr4{
@@ -394,7 +393,7 @@
             <!-- 用户信息 -->
             <div class="userName clearfix">
               <name class="fl name">苏格拉没有底</name>
-              <number class="fr number">编号：117542</number> 
+              <!-- <number class="fr number">编号：117542</number>  -->
             </div>
             <!-- 用户地址 及时间 -->
             <div class="userAddress">
@@ -402,8 +401,9 @@
             </div>
             <!-- 产品及报价 -->
             <div class="product" bindtap="jumpDetails">
-              长江2018年全新20吨吊车<span class="price">14.5万</span>  
+              长江2018年全新20吨吊车
             </div> 
+            <div class="price">14.5万元</div>
             <!-- 产品介绍 -->
             <div class="intro">
               车况良好，手续齐全，砍价勿扰
