@@ -4,6 +4,12 @@
   .content{
     display: block;
     background-color: #F7F4F8;
+    .weui-cell .weui-cell__hd_in-select-after{
+      color: #000000 !important;
+    }
+    .weui-select{
+      color: #999999;
+    }
     /*广告*/
     .banner{
       display: block;
@@ -95,9 +101,9 @@
         padding: 10rpx 0;
         .imgBox{
           display: inline-block;
-          width: 100rpx;
-          height: 100rpx;
-          padding: 0 10rpx;
+          width: 150rpx;
+          height: 150rpx;
+          padding: 0 20rpx;
           position:relative;
           image{
             display: block;
@@ -115,9 +121,8 @@
         }
         .btn_upload{
           display:inline-block;
-          width: 100rpx;
-          height: 100rpx;
-          margin-left: 45rpx;
+          width: 150rpx;
+          height: 150rpx;
           image{
             display: block;
             width: 100%;
@@ -174,7 +179,7 @@
     <!--出场年份-->
     <view class="weui-cell weui-cell_select">
       <view class="weui-cell__hd weui-cell__hd_in-select-after">
-        <view class="weui-label">出场年份</view>
+        <view class="weui-label">出厂年份</view>
       </view>
       <view class="weui-cell__bd">
         <picker  mode="date" fields="year" start="{{years}}" value="{{years}}" bindchange="changeYears">
@@ -213,8 +218,8 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">
-          <textarea class="weui-textarea" placeholder="手续、分期、工作时长、工作状况等..." style="height: 105rpx" value="{{intro}}"/>
-            <view class="weui-textarea-counter">{{fontNum}}/200</view>
+          <textarea class="weui-textarea" placeholder="手续、分期、工作时长、工作状况等..." style="width:710rpx;height: 150rpx;padding:20rpx 0;" value="{{intro}}"/>
+            <view class="weui-textarea-counter" style="text-align:right;color:#999999">{{fontNum}}/200</view>
         </view>
       </view>
     </view>
@@ -267,6 +272,8 @@
     <view class="sub">
       <button>保存</button>
     </view>
+    <!--警告-->
+    
   </view>  
 </template>
 <script>

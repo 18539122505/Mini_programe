@@ -33,7 +33,7 @@
         line-height: 88rpx;
         border-bottom: 1rpx solid #EEEEEE;
         i{
-          font-size: 30rpx;
+          font-size: 40rpx !important;
           color: #999999;
           vertical-align: middle;
         }
