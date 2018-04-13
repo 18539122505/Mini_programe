@@ -78,10 +78,10 @@
           color:#333333;
           font-size: 26rpx;
           border: 1rpx solid #EEEEEE;
-          border-radius: 3rpx;
+          border-radius: 6rpx;
           line-height: 52rpx;
           text-align: center;
-          margin-bottom: 20rpx;
+          margin-bottom: 25rpx;
         }
         .mr22{
           margin-right:30rpx !important;
