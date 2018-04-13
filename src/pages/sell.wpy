@@ -145,6 +145,14 @@
         margin: 0 auto;
       }
     }
+    .warning{
+      display: block;
+      padding: 20rpx;
+      text-align: center;
+      font-size: 22rpx;
+      line-height: 22rpx;
+      color: #999999;
+    }
   }
 </style>
 
@@ -271,6 +279,10 @@
     <!--保存-->
     <view class="sub">
       <button>保存</button>
+    </view>
+    <!--提醒-->
+    <view class="warning">
+      发布不真实车源，虚报价格，一经核实将做封号处理
     </view>
   </view>  
 </template>
