@@ -69,12 +69,14 @@
       border-top: 1rpx solid #EEEEEE;
       dialog{
         display: block;
+        width: 675rpx;
         height: 300rpx;
         overflow-y: auto;
+        padding: 0 20rpx;
         .city{
           display:block;
           float:left;
-          width: 216rpx;
+          width: 202rpx;
           color:#333333;
           font-size: 26rpx;
           border: 1rpx solid #EEEEEE;
@@ -84,7 +86,7 @@
           margin-bottom: 25rpx;
         }
         .mr22{
-          margin-right:30rpx !important;
+          margin-right:28rpx !important;
         }
         .selected{
           border: 1rpx solid #02B6AD !important;
@@ -94,17 +96,19 @@
       }
       buttongrounp{
         float:left;
-        width: 702rpx;
+        width: 714rpx;
         display:block;
-        text-align:center;
+        margin: 0 auto;
+        padding: 0 20rpx;
         cencel,sure{
           display:inline-block;
-          width:330rpx;
+          width:317rpx;
           text-align:center;
           border:1rpx solid #CFCFCF;
           line-height:68rpx;
           font-size: 26rpx;
-          border-radius:5rpx
+          border-radius:5rpx;
+          text-align:center;
         }
         sure{
           margin-left:34rpx;
@@ -326,7 +330,7 @@
 
        <!--城市选择列表-->
       <ul class="cityList clearfix" wx:if="{{isShow == 1 && isShowDialog?true:false}}">
-        <dialog>
+        <dialog class="clearfix">
           <repeat for="{{cityArr}}" key="index" index="index" item="item">
             <li class="{{(index+1)%3 != 0? (childCity==item?'city mr22 selected':'city mr22'):(childCity==item?'city selected':'city')}}" bindtap="childSelCity({{item}})">{{item}}</li>
           </repeat>
@@ -452,7 +456,7 @@
         'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
       ],
       cityArr:[
-        '全国','北京','天津','上海','重庆','河北','河南','湖南','湖北','广东','广西'
+        '全国','北京','天津','上海','重庆','河北','河南','湖南'
       ],
       typeArr:[
         "全部","吊车","越野吊车","履带吊","高空作业平台","随车吊","吊塔","高空作业","施工升降机","其他"
