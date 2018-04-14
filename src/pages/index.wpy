@@ -225,13 +225,14 @@
             margin-right: 46rpx;
             i{
               display: inline-block;
-              font-size: 28rpx;
+              font-size: 34rpx;
               margin-right: 14rpx;
+              color: #cdccc8;
             }
           }
           .share{
             i{
-              font-size: 34rpx !important;
+              font-size: 40rpx !important;
             }
           }
           .phone{
@@ -244,7 +245,7 @@
             border-radius: 30rpx;
             i{
               display: inline-block;
-              font-size: 28rpx;
+              font-size: 34rpx;
               margin-right: 5rpx;
             }
           }
@@ -572,11 +573,19 @@
       },
       /*取消按钮*/
       cencel:function(){
-        this.isShow = -1
+        this.isShow = -1;
+        this.isShowDialo=false;
+        this.isShowTypeDialog=false;
+        this.isShowBrandDialog=false;
+        this.isShowSortDialog = false;
       },
       /*确认*/
       sure:function(){
-        this.isShow = -1
+        this.isShow = -1;
+        this.isShowDialo=false;
+        this.isShowTypeDialog=false;
+        this.isShowBrandDialog=false;
+        this.isShowSortDialog = false;
       },
       /*搜索框事件*/
       showInput: function () {
