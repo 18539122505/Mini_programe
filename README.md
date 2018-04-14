@@ -1,5 +1,4 @@
 # 微信小程序--起重圈
-```
 ### 项目下载 
 tab 推荐使用 git clone url 或 Down Load
 
