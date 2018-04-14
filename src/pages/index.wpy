@@ -210,7 +210,7 @@
             padding: 16rpx 0;
             image{
               display: inline-block;
-              width: 224rpx;
+              width: 222rpx;
               height: 174rpx;
             }
             .mr4{
