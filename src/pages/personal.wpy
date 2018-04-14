@@ -73,7 +73,7 @@
   <view class="personal">
     <!--用户头像-->
     <view class="user_msg">
-      <image src="../assets/images/my.png" class="user_icon">
+      <image src="../assets/images/88f9d96954bcd4e2d592581f147ad4b4.jpg" class="user_icon">
       <view class="user_name">苏格拉没有底</view>
     </view>
     <!--我得信息列表-->
