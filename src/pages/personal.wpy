@@ -94,6 +94,9 @@
     </view>
     <!--我得信息列表-->
     <view class="ul">
+      <view class="li clearfix" bindtap="jumpphone">
+        <i class="iconfont icon-shouji fl"></i><cont class="fl">绑定手机号</cont><i class="iconfont icon-xiangyou fr"></i>
+      </view>
       <view class="li clearfix" bindtap="jumpRelease">
         <i class="iconfont icon-wofabude fl"></i><cont class="fl">我发布的</cont><i class="iconfont icon-xiangyou fr"></i>
       </view>
@@ -142,6 +145,11 @@ export default class Personal extends wepy.page {
     backgroundColor:'#F7F4F8'
   }
   methods={
+    jumpphone:function(){
+      wx.navigateTo({
+        url:'bindphone'
+      })
+    },
     /*跳我的发布*/
     jumpRelease:function(){
       wx.navigateTo({
