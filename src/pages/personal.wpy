@@ -67,6 +67,22 @@
         }
       }
     }
+    .signout_box{
+      display: block;
+      margin: 40rpx auto;
+      padding: 0 20rpx;
+      background-color: #ffffff;
+      border-top: 1rpx solid #EEEEEE;
+      border-bottom: 1rpx solid #EEEEEE;
+      .btn_signout{
+        display: block;
+        color: #000000;
+        text-align: center;
+        font-size: 32rpx;
+        line-height: 86rpx;
+        border-radius: 8rpx;
+      }
+    }
   }
 </style>
 <template>
@@ -111,6 +127,10 @@
       <view class="li clearfix" bindtap="jumpSeting">
         <i class="iconfont icon-shezhi fl"></i><cont class="fl">授权设置</cont><i class="iconfont icon-xiangyou fr"></i><intro class="fr">0</intro>
       </view>
+    </view>
+    <!--推出登录-->
+    <view class="signout_box">
+      <view class="btn_signout">退出登录</view>
     </view>
   </view>
 </template>
