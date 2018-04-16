@@ -210,11 +210,11 @@
             padding: 16rpx 0;
             image{
               display: inline-block;
-              width: 222rpx;
-              height: 174rpx;
+              width: 218rpx;
+              height: 218rpx;
             }
             .mr4{
-              margin-right: 4rpx;
+              margin-right: 10rpx;
             }
           }
       }
@@ -488,7 +488,9 @@
           imageArr:[
             'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=845224913,672761462&fm=27&gp=0.jpg',
             'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3878847766,3988120331&fm=200&gp=0.jpg',
-            'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3448661152,313512508&fm=111&gp=0.jpg'
+            'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3448661152,313512508&fm=111&gp=0.jpg',
+            'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=845224913,672761462&fm=27&gp=0.jpg',
+            'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3878847766,3988120331&fm=200&gp=0.jpg'
           ],
           is_colle:false
         },
